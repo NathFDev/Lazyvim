@@ -6,14 +6,6 @@ opt.showmode = false
 opt.cursorline = true
 opt.mouse = "a"
 opt.list = true
-opt.listchars = {
-  tab = "❘-",
-  trail = "·",
-  lead = "·",
-  extends = "»",
-  precedes = "«",
-  nbsp = "×",
-}
 opt.sidescrolloff = 3
 opt.wrap = false
 opt.fileencoding = "utf-8"
