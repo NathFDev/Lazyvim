@@ -19,12 +19,8 @@ return {
   { import = "lazyvim.plugins.extras.dap.core" },
   { import = "lazyvim.plugins.extras.dap.nlua" },
 
-  -- UI
-  { import = "lazyvim.plugins.extras.ui.edgy" },
-
   -- Editor
-  { import = "lazyvim.plugins.extras.editor.aerial" },
-  { import = "lazyvim.plugins.extras.editor.mini-files" },
+  { import = "lazyvim.plugins.extras.editor.symbols-outline" },
   { import = "lazyvim.plugins.extras.editor.leap" },
 
   -- Formatting
@@ -33,9 +29,6 @@ return {
 
   -- Lint
   { import = "lazyvim.plugins.extras.linting.eslint" },
-
-  -- Util
-  { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 
   -- VSCode
   { import = "lazyvim.plugins.extras.vscode" },

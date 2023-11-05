@@ -1,26 +1,42 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-local Util = require("lazyvim.util")
-
-local map = Util.safe_keymap_set
+local map = function(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
 
 -- go to beginning and end
 map("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "End of line" })
 
 -- navigate within insert mode
-map("i", "<C-h>", "<Left>", { desc = "Move left" })
-map("i", "<C-l>", "<Right>", { desc = "Move right" })
-map("i", "<C-j>", "<Down>", { desc = "Move down" })
-map("i", "<C-k>", "<Up>", { desc = "Move up" })
+map("i", "<A-h>", "<Left>", { desc = "Move left" })
+map("i", "<A-l>", "<Right>", { desc = "Move right" })
+map("i", "<A-j>", "<Down>", { desc = "Move down" })
+map("i", "<A-k>", "<Up>", { desc = "Move up" })
+
+-- clear highlights
+map("n", "<Esc>", "<cmd> noh <CR>", { desc = "Clear highlights" })
+
+-- window management
+map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+
+map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+map("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- Buffer Navigation
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down half a page and center the cursor" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up half a page and center the cursor" })
 map("n", "n", "nzzzv", { desc = "Move to the next search result and center the cursor" })
 map("n", "N", "Nzzzv", { desc = "Move to the previous search result and center the cursor" })
-map("n", "<leader>x", ":bd<CR>", { desc = "Close buffer" })
+map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Delete Buffer" })
 
 -- Search and replace word under cursor
 map(
@@ -33,11 +49,9 @@ map(
 -- Source current file
 map("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
 
--- Copy all
+-- File action
 map("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
-
--- New buffer
-map("n", "<leader>b", "<cmd> enew <CR>", { desc = "New buffer" })
+map("n", "<C-a>", "ggVG", { desc = "Select whole file" })
 
 -- Move the current line / block
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
@@ -54,7 +68,8 @@ map("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
 map("x", "<leader>p", [["_dP]])
 
 -- Delete without yanking
-map({ "n", "v" }, "<leader>dx", [["_d]])
+map("n", "<leader>dx", [["_d]])
+map("v", "<leader>dx", [["_d]])
 
 -- Escape
 map("i", "<C-c>", "<Esc>")
