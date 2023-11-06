@@ -46,9 +46,6 @@ map(
   { desc = "Search and replace word under cursor" }
 )
 
--- Source current file
-map("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
-
 -- File action
 map("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
 map("n", "<C-a>", "ggVG", { desc = "Select whole file" })

@@ -76,5 +76,4 @@ opt.undofile = true
 opt.backspace = { "eol", "start", "indent" }
 opt.clipboard = "unnamedplus"
 opt.encoding = "utf-8"
-opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
 opt.syntax = "enable"
