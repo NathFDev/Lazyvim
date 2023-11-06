@@ -25,7 +25,6 @@ opt.isfname:append("@-@")
 
 -- Column
 opt.textwidth = 80
-opt.colorcolumn = "80"
 
 -- Tab
 opt.tabstop = 2
