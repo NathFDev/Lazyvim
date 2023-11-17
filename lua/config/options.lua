@@ -7,7 +7,7 @@ opt.cursorline = true
 opt.mouse = "a"
 opt.list = true
 opt.sidescrolloff = 3
-opt.wrap = false
+opt.wrap = true
 opt.fileencoding = "utf-8"
 
 -- Clipboard
