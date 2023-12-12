@@ -30,7 +30,6 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down half a page and center the cu
 map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up half a page and center the cursor" })
 map("n", "n", "nzzzv", { desc = "Move to the next search result and center the cursor" })
 map("n", "N", "Nzzzv", { desc = "Move to the previous search result and center the cursor" })
-map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Delete Buffer" })
 
 -- Search and replace word under cursor
 map(
