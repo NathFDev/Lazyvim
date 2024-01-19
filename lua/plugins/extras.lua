@@ -1,6 +1,6 @@
 return {
   -- Coding
-  -- { import = "lazyvim.plugins.extras.coding.copilot" },
+  { import = "lazyvim.plugins.extras.coding.copilot" },
 
   -- Lang
   { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -14,6 +14,9 @@ return {
   { import = "lazyvim.plugins.extras.lang.tailwind" },
   { import = "lazyvim.plugins.extras.lang.yaml" },
   { import = "lazyvim.plugins.extras.lang.markdown" },
+
+  -- Lsp
+  { import = "lazyvim.plugins.extras.lsp.none-ls" },
 
   -- Dap
   { import = "lazyvim.plugins.extras.dap.core" },

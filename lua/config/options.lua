@@ -1,4 +1,5 @@
 local opt = vim.opt
+vim.filetype.add({ extension = { templ = "templ" } })
 
 -- UI
 opt.laststatus = 3 -- global statusline
