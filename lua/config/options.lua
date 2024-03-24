@@ -1,6 +1,13 @@
 local opt = vim.opt
 vim.filetype.add({ extension = { templ = "templ" } })
 
+local vim = vim
+local Plug = vim.fn["plug#"]
+
+vim.call("plug#begin")
+
+Plug("gleam-lang/gleam.vim")
+
 -- UI
 opt.laststatus = 3 -- global statusline
 opt.showmode = false

@@ -15,7 +15,11 @@ return {
             "templ",
           },
         },
-        templ = {},
+        templ = {
+          filetypes = {
+            "templ",
+          },
+        },
         cssls = {},
         svelte = {},
         emmet_language_server = {
