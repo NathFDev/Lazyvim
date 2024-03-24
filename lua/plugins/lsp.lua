@@ -6,7 +6,6 @@ return {
         html = {
           filetypes = {
             "html",
-            "templ",
           },
         },
         htmx = {
@@ -15,54 +14,37 @@ return {
             "templ",
           },
         },
-        templ = {
-          filetypes = {
-            "templ",
-          },
-        },
-        cssls = {},
-        svelte = {},
         emmet_language_server = {
           filetypes = {
-            "javascript",
             "javascriptreact",
-            "javascript.jsx",
-            "typescript",
             "typescriptreact",
-            "typescript.tsx",
+            "html",
             "astro",
             "vue",
             "svelte",
-            "html",
             "templ",
           },
         },
-        volar = {},
-        astro = {},
-        custom_elements_ls = {},
-        tailwindcss = {
+        custom_elements_ls = {
           filetypes = {
-            "javascript",
             "javascriptreact",
-            "javascript.jsx",
-            "typescript",
             "typescriptreact",
-            "typescript.tsx",
             "astro",
             "vue",
             "svelte",
-            "html",
+          },
+        },
+        tailwindcss = {
+          filetypes = {
             "templ",
           },
         },
         tsserver = {
           filetypes = {
             "javascript",
-            "javascriptreact",
-            "javascript.jsx",
             "typescript",
+            "javascriptreact",
             "typescriptreact",
-            "typescript.tsx",
             "astro",
             "vue",
             "svelte",
